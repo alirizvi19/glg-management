@@ -8,22 +8,31 @@
     <title>GLG Management</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" />
     <link rel="stylesheet" href="css/stellarnav.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
-    
+
     <header class="mainHd">
         <div class="topheader">
-            <div class="container">
-                <div class="marq"></div>
+            <div class="container-fluid">
+                <div class="swiper-container swiper--top">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Checkout our new location</div>
+                        <div class="swiper-slide">Checkout our new location</div>
+                        <div class="swiper-slide">Checkout our new location</div>
+                        <div class="swiper-slide">Checkout our new location</div>
+                        <div class="swiper-slide">Checkout our new location</div>
+                        <div class="swiper-slide">Checkout our new location</div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="bottomheader">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="logo">
                     <a href="index.php"><img src="images/logo.svg" alt=""></a>
                 </div>

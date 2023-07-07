@@ -4,44 +4,87 @@ $(document).ready(function () {
     position: "right",
   });
 
-  var swiper = new Swiper(".bannerSwiper", {
-    spaceBetween: 30,
-    effect: "fade",
-    hashNavigation: {
-      watchState: true,
+  var SwiperTop = new Swiper(".swiper--top", {
+    spaceBetween: 0,
+    centeredSlides: true,
+    speed: 6000,
+    autoplay: {
+      delay: 1,
+      reverseDirection: true,
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+    loop: true,
+    slidesPerView: "auto",
+    allowTouchMove: false,
+    disableOnInteraction: true,
+  });
+  var SwiperTop = new Swiper(".swiper--serv", {
+    spaceBetween: 40,
+    centeredSlides: true,
+    speed: 6000,
+    autoplay: {
+      delay: 1,
+    },
+    loop: true,
+    slidesPerView: 5,
+    allowTouchMove: false,
+    disableOnInteraction: true,
+  });
+
+  var mySwiper = new Swiper(".video-slider-inner", {
+    loop: true,
+    slidesPerView: 1.7,
+    centeredSlides: true,
+    spaceBetween: 0,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    on: {
+      transitionStart: function () {
+        var videos = document.querySelectorAll("video");
+
+        Array.prototype.forEach.call(videos, function (video) {
+          video.pause();
+        });
+      },
+
+      transitionEnd: function () {
+        var activeIndex = this.activeIndex;
+        var activeSlide =
+          document.getElementsByClassName("swiper-slide")[activeIndex];
+        var activeSlideVideo = activeSlide.getElementsByTagName("video")[0];
+        activeSlideVideo.play();
+      },
     },
   });
 
-  var swiper = new Swiper(".vertSwiper", {
-    freeMode: {
+  //!debashis
+  var swiper = new Swiper(".swiper--prod", {
+    slidesPerView: 3,
+    spaceBetween: 10,
+    autoplay: {
       enabled: true,
-      sticky: true,
-    },
-    slidesPerView: 1,
-    spaceBetween: 30,
-    autoplay: true,
-    //direction: "vertical",
-    speed: 800,
-    mousewheel: {
-      releaseOnEdges: true,
-    },
-
-    breakpoints: {
-      1199: {
-        direction: "vertical",
-      },
-      991: {
-        direction: "vertical",
-      },
-      767: {
-        direction: "horizontal",
-      },
+      delay: 5000,
     },
   });
+  var swiper = new Swiper(".swiper--prod2", {
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 0,
+    centeredSlides: false,
+    autoplay: {
+      enabled: true,
+      delay: 5000,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  //!Debashis
 
   // Equal height
   $(function () {
@@ -52,11 +95,13 @@ $(document).ready(function () {
   // $(".our-val .imageshadowbxrow").css("height", imgHight);
 });
 
+//!debashis
 window.addEventListener("load", (event) => {
   $(document).ready(function () {
-    var topheaderHeight = $(".topheader").outerHeight(true);
+    var topheaderHeight = $(".about-sec1 .content").outerHeight(true);
     //alert(topheaderHeight);
-    $(".bannerWrapper").css("margin-top", topheaderHeight);
-    $(".innerbanner").css("margin-top", topheaderHeight);
+    $(".about-sec1").css("height", topheaderHeight);
+    //$(".innerbanner").css("margin-top", topheaderHeight);
   });
 });
+//!debashis
